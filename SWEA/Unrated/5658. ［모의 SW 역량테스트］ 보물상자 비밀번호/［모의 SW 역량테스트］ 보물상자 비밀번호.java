@@ -13,8 +13,9 @@ public class Solution {
 		for (int tc = 1; tc <= T; tc++) {
 			int N = sc.nextInt();
 			int K = sc.nextInt();
+			// 중복값 없애기 위해 set 정의
 			Set<String> set = new HashSet<>();
-			char[] inputs = new char[N * 2];
+			char[] inputs = new char[N + N / 4];
 			int front = 0;
 			int rear = N - 1;
 			char[] inputStr = sc.next().toCharArray();
@@ -42,7 +43,7 @@ public class Solution {
 				arr[idx++] = Integer.parseInt(s, 16);
 			}
 			Arrays.sort(arr, Collections.reverseOrder());
-			System.out.println("#"+tc+" " +arr[K-1]);
+			System.out.println("#" + tc + " " + arr[K - 1]);
 		}
 	}
 }

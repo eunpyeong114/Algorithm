@@ -9,7 +9,8 @@ public class Main {
 	public static int[][] dist;
 	public static int ans = Integer.MAX_VALUE;
 	public static boolean[][][] visited;
-
+	public static int[] dr = { 0, 1, 0, -1 };
+	public static int[] dc = { 1, 0, -1, 0 };
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
@@ -50,8 +51,7 @@ public class Main {
 				return;
 			}
 
-			int[] dr = { 0, 1, 0, -1 };
-			int[] dc = { 1, 0, -1, 0 };
+
 
 			for (int i = 0; i < 4; i++) {
 				int nr = r + dr[i];

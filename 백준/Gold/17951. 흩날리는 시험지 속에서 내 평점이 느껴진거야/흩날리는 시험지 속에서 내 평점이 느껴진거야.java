@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -25,30 +26,31 @@ public class Main {
 
 	// 이분탐색
 	public static int binarySearch(int num) {
+		// 시작점
 		int str = 0;
+		// 끝점
 		int end = num;
+		// 출력값
 		int result = Integer.MIN_VALUE;
+		// 이분탐색
 		while (str <= end) {
 			int mid = (str + end) / 2;
 			int min = Integer.MAX_VALUE;
+			// 그룹 합
 			int sum = 0;
+			// 그룹의 갯수
 			int cnt = 0;
+			// 시험지 순회
 			for (int i = 0; i < paper.length; i++) {
 				sum += paper[i];
-				// 합이 초과할 때
+				// 합 이상이 될 때
 				if (sum >= mid) {
 					cnt++;
 					min = Math.min(min, sum);
 					sum = 0;
 				}
-
-//				// 마지막인 경우
-//				else if (i == paper.length - 1) {
-//					min = Math.min(min, sum);
-//					cnt++;
-//				}
 			}
-
+			// 구한 그룹의 갯수와 K가 동일할 때
 			if (cnt == K) {
 				result = Math.max(result, min);
 				str = mid + 1;
